@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 26, 2022 at 04:19 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `water_level_monitoring`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `waterrecords`
+--
+
+CREATE TABLE `waterrecords` (
+  `RecordID` int(40) NOT NULL,
+  `TankID` int(11) NOT NULL,
+  `WaterLevel` int(40) DEFAULT NULL,
+  `TankLocation` varchar(40) NOT NULL DEFAULT 'Fablab',
+  `TankOwner` varchar(40) NOT NULL DEFAULT 'Jude_Emmie',
+  `Timein` datetime(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `waterrecords`
+--
+
+INSERT INTO `waterrecords` (`RecordID`, `TankID`, `WaterLevel`, `TankLocation`, `TankOwner`, `Timein`) VALUES
+(1, 8, 78, 'Fablab', 'Jude_Emmie', '2022-10-26 07:45:08.649000'),
+(2, 5, 23, 'Fablab', 'Jude_Emmie', '2022-10-27 01:41:34.000000'),
+(3, 9, 21, 'Fablab', 'Jude_Emmie', '2022-10-27 02:42:53.145000'),
+(4, 7, 75, 'Fablab', 'Jude_Emmie', '2022-10-26 12:45:56.357000'),
+(5, 1, 10, 'Fablab', 'Jude_Emmie', '0000-00-00 00:00:00.000000'),
+(6, 5, 45, 'Fablab', 'Jude_Emmie', '2022-10-26 09:43:42.960000');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `waterrecords`
+--
+ALTER TABLE `waterrecords`
+  ADD PRIMARY KEY (`RecordID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `waterrecords`
+--
+ALTER TABLE `waterrecords`
+  MODIFY `RecordID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
